@@ -45,12 +45,12 @@ def setup_chain(selected_chapter, selected_subject):
 
 
 st.set_page_config(
-    page_title="StudyPal",
+    page_title="Learnora",
     page_icon="🌀",
     layout="centered"
 )
 
-st.title("📚 Study Pal")
+st.title("📚 Learnora")
 
 # Initialize the chat history and video history as session state in Streamlit
 if "chat_history" not in st.session_state:
