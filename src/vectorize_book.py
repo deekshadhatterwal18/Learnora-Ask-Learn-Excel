@@ -7,7 +7,7 @@ from langchain_chroma import Chroma
 
 load_dotenv()
 CLASS_SUBJECT_NAME = os.getenv('CLASS_SUBJECT_NAME')
-DEVICE = os.getenv('DEVICE', 'cpu')  # Default to 'cpu' if not set
+DEVICE = os.getenv('DEVICE', 'cpu')  
 
 working_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(working_dir)
@@ -15,7 +15,7 @@ data_dir = f"{parent_dir}/data"
 vector_db_dir = f"{parent_dir}/vector_db"
 chapters_vector_db_dir = f"{parent_dir}/chapters_vector_db"
 
-embedding = HuggingFaceEmbeddings(model_kwargs={"device": DEVICE}) # Use device from env
+embedding = HuggingFaceEmbeddings(model_kwargs={"device": DEVICE}) 
 text_splitter = CharacterTextSplitter(chunk_size=2000, chunk_overlap=500)
 
 
