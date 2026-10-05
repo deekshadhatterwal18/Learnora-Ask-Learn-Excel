@@ -13,8 +13,7 @@ from get_yt_video import get_yt_video_link
 
 # Load environment variables
 load_dotenv()
-DEVICE = os.getenv('DEVICE', 'cpu')  # Default to 'cpu' if not set
-
+DEVICE = os.getenv('DEVICE', 'cpu')  
 working_dir = os.path.dirname(os.path.abspath(__file__))
 parent_dir = os.path.dirname(working_dir)
 
@@ -28,7 +27,7 @@ def get_vector_db_path(chapter, subject):
 
 def setup_chain(selected_chapter, selected_subject):
     vector_db_path = get_vector_db_path(selected_chapter, selected_subject)
-    embeddings = HuggingFaceEmbeddings(model_kwargs={"device": DEVICE}) # Use device from env
+    embeddings = HuggingFaceEmbeddings(model_kwargs={"device": DEVICE}) 
     vectorstore = Chroma(persist_directory=vector_db_path, embedding_function=embeddings)
     llm = ChatGroq(model="llama-3.3-70b-versatile", temperature=0)
     memory = ConversationBufferMemory(llm=llm, output_key='answer', memory_key='chat_history', return_messages=True)
