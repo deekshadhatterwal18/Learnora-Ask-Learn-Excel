@@ -15,5 +15,3 @@ def get_chapter_list(selected_subject):
         return chapters_list
 
 
-# chapters_list = get_chapter_list("Biology")
-# print(chapters_list)
